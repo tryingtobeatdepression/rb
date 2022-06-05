@@ -3,20 +3,26 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { RolesGuard } from 'src/auth/roles.guard';
 import { Roles } from 'src/decorators/role.decorator';
 import { Role } from 'src/enums/role.enum';
+import { CreateAdminDto } from './create-admin.dto';
 import { CreateUserDto } from './create-user.dto';
 import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
     constructor(private usersService: UsersService) {}
-    // ✅
-    // @UseGuards(JwtAuthGuard, RolesGuard)
-    @Roles(Role.Admin)
-    @Post('/create')
+    
+    @Post('/signup')
     @HttpCode(201)
-    // @Roles(Role.User)
-    async create(@Body() createUserDto: CreateUserDto) {
-        return await this.usersService.create(createUserDto); 
+    async signup(@Body() createUserDto: CreateUserDto) {
+        return await this.usersService.signup(createUserDto); 
+    }
+
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles(Role.Admin)
+    @Post('/create-admin')
+    @HttpCode(201)
+    async create(@Body() createAdminDto: CreateAdminDto) {
+        return await this.usersService.create(createAdminDto);
     }
 
     // @UseGuards(JwtAuthGuard)

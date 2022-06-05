@@ -7,5 +7,5 @@ export class CreateUserDto {
     confirmationPassword: string;
     username: string;
     phone: string;
-    roles: Role[] = [Role.User];
+    roles?: Role[];
 }

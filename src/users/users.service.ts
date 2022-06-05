@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { CreateAdminDto } from './create-admin.dto';
 import { CreateUserDto } from './create-user.dto';
 import { User, UserDocument } from './user.schema';
 
@@ -14,21 +13,11 @@ export class UsersService {
      * @param createUserDto 
      * @returns 
      */
-    async signup(createUserDto: CreateUserDto): Promise<User> {
+    async create(createUserDto: CreateUserDto): Promise<User> {
         const user = new this.userModel(createUserDto);
         return user.save();
     }
 
-    /**
-     * Create a new Admin 
-     * @param createAdminDto 
-     * @returns 
-     */
-    async create(createAdminDto: CreateAdminDto): Promise<User> {
-        const admin = new this.userModel(createAdminDto);
-        return admin.save();
-    }
-    
     /**
      * Get all Users
      * @returns 

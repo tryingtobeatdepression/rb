@@ -10,7 +10,7 @@ import { UsersService } from './users.service';
 @Controller('users')
 export class UsersController {
     constructor(private usersService: UsersService) {}
-    
+
     @Post('/signup')
     @HttpCode(201)
     async signup(@Body() createUserDto: CreateUserDto) {

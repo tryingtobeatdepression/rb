@@ -1,3 +1,5 @@
+import { Role } from "src/enums/role.enum";
+
 export class CreateUserDto {
     name: string;
     email: string;
@@ -5,4 +7,5 @@ export class CreateUserDto {
     confirmationPassword: string;
     username: string;
     phone: string;
+    roles: Role[] = [Role.User];
 }

@@ -25,7 +25,7 @@ export class User {
     @Prop({ required: [true, 'Field password is required.']} )
     password: string;
 
-    @Prop({ default: Role.User })
+    @Prop()
     roles: Role[];
 }
 

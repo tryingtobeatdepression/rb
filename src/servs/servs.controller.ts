@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Param, Post } from '@nestjs/common';
 import { CreateServDto } from './create-serv.dto';
 import { ServsService } from './servs.service';
 
@@ -17,4 +17,12 @@ export class ServsController {
     async list() {
         return await this.servsService.findAll();
     }
+
+    @Delete(':id')
+    @HttpCode(200)
+    async delete(@Param('id') id: string) {
+        return await this.servsService.delete(id);
+    }
 }
+
+

@@ -16,4 +16,8 @@ export class ServsService {
     async findAll(): Promise<Serv[]> {
         return await this.serviceModel.find().exec();
     }
+
+    async delete(id: string): Promise<Serv> {
+        return await this.serviceModel.findByIdAndDelete(id).exec();
+    }
 }

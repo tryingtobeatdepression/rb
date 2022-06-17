@@ -8,6 +8,8 @@ import { RolesGuard } from './auth/roles.guard';
 import { UsersModule } from './users/users.module';
 import { ServsModule } from './servs/servs.module';
 import { CategoriesModule } from './categories/categories.module';
+import { WorkshopsModule } from './workshops/workshops.module';
+import { AboutModule } from './about/about.module';
 
 const dbKey = 'mongodb://localhost/beauty-app-db';
 
@@ -18,6 +20,8 @@ const dbKey = 'mongodb://localhost/beauty-app-db';
     MongooseModule.forRoot(dbKey),
     ServsModule,
     CategoriesModule,
+    WorkshopsModule,
+    AboutModule,
   ],
   controllers: [AppController],
   providers: [

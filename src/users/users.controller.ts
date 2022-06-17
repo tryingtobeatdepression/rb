@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, Post, Put, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, Request, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { RolesGuard } from 'src/auth/roles.guard';
 import { Roles } from 'src/decorators/role.decorator';
@@ -31,5 +31,11 @@ export class UsersController {
     @HttpCode(200)
     async list() {
         return await this.usersService.findAll();
+    }
+
+    @Delete(':id')
+    @HttpCode(200)
+    async delete(@Param('id') id: string) {
+        return await this.usersService.deleteOne(id);
     }
 }

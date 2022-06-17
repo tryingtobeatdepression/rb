@@ -36,4 +36,13 @@ export class UsersService {
         const user = await this.userModel.findOne({ username: username, }).exec();
         return user;
     }
+
+    /**
+     * 
+     * @param id 
+     * @returns Promise<User>
+     */
+    async deleteOne(id: string): Promise<User> {
+        return await this.userModel.findByIdAndDelete(id).exec();
+    }
 }

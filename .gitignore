@@ -1,7 +1,8 @@
 # compiled output
 /dist
 /node_modules
-
+# assets (images ..etc)
+/assets
 # Logs
 logs
 *.log

@@ -21,6 +21,9 @@ export class Workshop {
 
     @Prop()
     duration: string;
+
+    @Prop()
+    price: number;
 }
 
 export const WorkshopSchema = SchemaFactory.createForClass(Workshop);

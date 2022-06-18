@@ -10,6 +10,7 @@ import { ServsModule } from './servs/servs.module';
 import { CategoriesModule } from './categories/categories.module';
 import { WorkshopsModule } from './workshops/workshops.module';
 import { AboutModule } from './about/about.module';
+import { ReservationsModule } from './reservations/reservations.module';
 
 const dbKey = 'mongodb://localhost/beauty-app-db';
 
@@ -22,6 +23,7 @@ const dbKey = 'mongodb://localhost/beauty-app-db';
     CategoriesModule,
     WorkshopsModule,
     AboutModule,
+    ReservationsModule,
   ],
   controllers: [AppController],
   providers: [

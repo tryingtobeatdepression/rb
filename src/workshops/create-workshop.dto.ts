@@ -4,4 +4,5 @@ export class CreateWorkshopDto {
     days: string[];
     happensEvery: string;
     duration: string;
+    price: number;
 }

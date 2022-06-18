@@ -16,7 +16,6 @@ export class WorkshopsController {
     @Get('list')
     @HttpCode(200)
     async list() {
-        // console.log('yo')
         return await this.workshopsService.findAll();
     }
 

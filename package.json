@@ -28,6 +28,7 @@
     "@nestjs/passport": "^8.2.1",
     "@nestjs/platform-express": "^8.0.0",
     "@types/mongoose": "^5.11.97",
+    "moment": "^2.29.3",
     "mongoose": "^6.3.4",
     "passport": "^0.5.3",
     "passport-jwt": "^4.0.0",

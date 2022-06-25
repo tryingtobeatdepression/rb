@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import moment from 'moment';
 import { Model } from 'mongoose';
 import { CreateReservationDto } from './create-reservation.dto';
 import { Reservation, ReservationDocument } from './reservation.schema';
@@ -16,7 +15,6 @@ export class ReservationsService {
             createReservationDto.reservationStart.toString(),
             createReservationDto.duration
         );
-        console.log('clashFound: ' + clashFound);
         if (clashFound == false) {
             console.log
             const reservation = new this.reservationModel({
@@ -74,7 +72,6 @@ let clashesWithExisting = (existingResStart: number, existingResEnd: number,
     newResStart: number, newResEnd: number): boolean => {
     if (newResStart >= existingResStart && newResStart < existingResEnd ||
         existingResStart >= newResStart && existingResStart < newResEnd) {
-        console.log('clash')
         // throw new Error(
         //     `Reservation could not be saved.\nThere's a clash with an existing reservation.`
         // );

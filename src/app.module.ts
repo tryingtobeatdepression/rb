@@ -11,6 +11,7 @@ import { CategoriesModule } from './categories/categories.module';
 import { WorkshopsModule } from './workshops/workshops.module';
 import { AboutModule } from './about/about.module';
 import { ReservationsModule } from './reservations/reservations.module';
+import { ProductsModule } from './products/products.module';
 
 const dbKey = 'mongodb://localhost/beauty-app-db';
 
@@ -24,6 +25,7 @@ const dbKey = 'mongodb://localhost/beauty-app-db';
     WorkshopsModule,
     AboutModule,
     ReservationsModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [

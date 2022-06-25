@@ -17,6 +17,15 @@ export class Serv {
         ref: 'Category',
     })
     category: Category;
+
+    @Prop()
+    price: number;
+
+    @Prop()
+    seatsCount: number;
+
+    @Prop()
+    avgTimeExpected: number;
 }
 
 export const ServSchema = SchemaFactory.createForClass(Serv);

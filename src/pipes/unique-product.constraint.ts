@@ -12,6 +12,7 @@ export class UniqueProductRule implements ValidatorConstraintInterface {
         try {
             let products = await this.productsService.findAll();
             for (let i = 0; i < products.length; i++) {
+                // FIXME: trim() is not working!
                 if (products[i].name.trim().toLowerCase() === value.trim().toLowerCase()) 
                     return false;
             };
@@ -19,7 +20,6 @@ export class UniqueProductRule implements ValidatorConstraintInterface {
             console.log('err')
             return false;
         }
-        console.log('return true');
         return true;
     }
 

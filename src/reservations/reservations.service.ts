@@ -70,10 +70,6 @@ let clashesWithExisting = (existingResStart: number, existingResEnd: number,
     newResStart: number, newResEnd: number): boolean => {
     if (newResStart >= existingResStart && newResStart < existingResEnd ||
         existingResStart >= newResStart && existingResStart < newResEnd) {
-        // throw new Error(
-        //     `Reservation could not be saved.\nThere's a clash with an existing reservation.`
-        // );
-        // from ${moment(existingResStart).format('HH:mm')} to ${moment(existingResEnd).format('HH:mm on LL')}
         // A clash was found 
         return true;
     }

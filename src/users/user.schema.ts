@@ -27,6 +27,11 @@ export class User {
 
     @Prop()
     roles: Role[];
+
+    // TODO: If too many were not confirmed, add the User to the blacklist.
+    // TODO: If too many were confirmed, give this User special Offers.
+    @Prop({ default: 0, })
+    confirmedOrders: number;
 }
 
 // inside the class definition

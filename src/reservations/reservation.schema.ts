@@ -13,10 +13,7 @@ export type ReservationDocument = Reservation & Document;
 export class Item {
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Serv'})
     serviceId: Serv;
-
-    @Prop()
-    quantity: number;
-
+    
     @Prop()
     discount: number;
 }
@@ -25,7 +22,6 @@ export const ItemSchema = SchemaFactory.createForClass(Item);
 
 export interface IItem {
     serviceId: string;
-    quantity: number;
     discount: number;
 }
 
@@ -50,7 +46,7 @@ export class Reservation {
     @Prop()
     duration: number;
 
-    @Prop()
+    @Prop({ default: false, })
     isConfirmed: boolean;
 
     @Prop({
@@ -58,6 +54,10 @@ export class Reservation {
         default: []
     })
     items: IItem[];
+
+    @Prop({ default: 0, })
+    totalDiscount: number;
+
 }
 
 export const ReservationSchema = SchemaFactory.createForClass(Reservation);

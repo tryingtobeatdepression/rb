@@ -17,7 +17,6 @@ export class UniqueProductRule implements ValidatorConstraintInterface {
                     return false;
             };
         } catch (e: any) {
-            console.log('err')
             return false;
         }
         return true;

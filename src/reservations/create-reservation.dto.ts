@@ -1,6 +1,5 @@
 import { OmitType, PartialType, PickType } from "@nestjs/mapped-types";
 import { IsDate, IsMongoId, IsNotEmpty, IsNumber, Validate } from "class-validator";
-import { NoClashes } from "src/pipes/no-clashes.constraint";
 import { IItem } from "./reservation.schema";
 
 export class CreateReservationDto {

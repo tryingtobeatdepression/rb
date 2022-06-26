@@ -16,7 +16,6 @@ export class ReservationsService {
             createReservationDto.duration
         );
         if (clashFound == false) {
-            console.log
             const reservation = new this.reservationModel({
                 reservationStart: createReservationDto.reservationStart,
                 duration: createReservationDto.duration,
@@ -62,7 +61,6 @@ export class ReservationsService {
             isClash = clashesWithExisting(existingResStart, existingResEnd, newResStart, newResEnd);
             if (isClash) return isClash;
         }
-        console.log('isClash: ' + isClash);
         return isClash;
     }
 }

@@ -3,7 +3,7 @@ import { Document } from "mongoose";
 
 export type ProductDocument = Product & Document;
 
-@Schema()
+@Schema({ timestamps: true,})
 export class Product {
     @Prop()
     name: string;
@@ -14,13 +14,13 @@ export class Product {
     @Prop()
     price: number;
 
-    @Prop()
+    @Prop({ default: 0, })
     availableQuantity: number;
 
-    @Prop()
+    @Prop({ default: 0, })
     reservedQuantity: number;
 
-    @Prop()
+    @Prop({ default: 0, })
     soldQuantity: number;
 }
 

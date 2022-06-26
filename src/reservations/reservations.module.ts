@@ -3,7 +3,6 @@ import { ReservationsService } from './reservations.service';
 import { ReservationsController } from './reservations.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Reservation, ReservationSchema } from './reservation.schema';
-import { NoClashesRule } from 'src/pipes/no-clashes.constraint';
 
 @Module({
   imports: [
@@ -12,7 +11,7 @@ import { NoClashesRule } from 'src/pipes/no-clashes.constraint';
       schema: ReservationSchema,
     }]),
   ],
-  providers: [NoClashesRule, ReservationsService],
+  providers: [ReservationsService],
   controllers: [ReservationsController]
 })
 export class ReservationsModule {}
